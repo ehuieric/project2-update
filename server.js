@@ -56,3 +56,15 @@ db.sequelize.sync({ }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+const forecast = weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) {
+  if(err){ 
+    console.log(err);
+    console.log('errror')
+  }
+ 
+  console.log(JSON.stringify(result, null, 2));
+  console.log("eric")
+  return JSON.stringify(result, null, 2);
+});
+ module.export = forecast
